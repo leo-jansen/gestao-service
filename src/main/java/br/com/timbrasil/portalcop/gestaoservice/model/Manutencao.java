@@ -9,15 +9,17 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
 @Table(name = "cop_app_tp_manutencao", schema = "cicop")
 public class Manutencao {
   @Id
   @Column(name = "id_tp_manutencao")
-  @SequenceGenerator(name = "sq_tp_manutencao", sequenceName = "sq_tp_manutencao", allocationSize = 1)
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_tp_manutencao")
+  @SequenceGenerator(name = "manutencao", sequenceName = "sq_tp_manutencao", allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "manutencao")
   private int id;
   @Column(name = "desc_tp_manutencao")
   private String descManutencao;

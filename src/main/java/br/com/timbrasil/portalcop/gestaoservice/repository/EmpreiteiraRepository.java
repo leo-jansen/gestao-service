@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import br.com.timbrasil.portalcop.gestaoservice.model.Empreiteira;
 
 public interface EmpreiteiraRepository extends JpaRepository<Empreiteira, Integer> {
-  @Query(name = "SELECT e.id, e.nomeEmpreiteira FROM empreiteira e WHERE e.empreiteiraAtiva = 1 ORDER BY e.id", nativeQuery = true)
-  List<Empreiteira> findAllEmpreiteiraAtiva();
+  @Query(name = "SELECT e.id, e.nomeEmpreiteira FROM empreiteira e WHERE e.empreiteiraAtiva = :empreiteiraAtiva ORDER BY e.id", nativeQuery = true)
+  List<Empreiteira> findByEmpreiteiraAtiva(int empreiteiraAtiva);
   
 }
