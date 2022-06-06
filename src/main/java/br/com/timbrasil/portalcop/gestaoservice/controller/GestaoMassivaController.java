@@ -20,6 +20,9 @@ public class GestaoMassivaController {
   @GetMapping
   public ResponseEntity<List<MassivaDto>> getMassiva() {
     List<MassivaDto> massivas = gestaoMassivaService.getMassiva();
+    if (massivas.isEmpty()) {
+      return ResponseEntity.noContent().build();
+    }
     return ResponseEntity.ok(massivas);
   }
 }
