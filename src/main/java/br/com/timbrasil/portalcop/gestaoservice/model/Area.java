@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "cop_app_metal_area", schema = "cicop")
 public class Area {
   @Id
-	@Column(name = "id_area")
+  @Column(name = "id_area")
   @SequenceGenerator(name = "area", sequenceName = "sq_area", allocationSize = 1)
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "area")
 	private int id;
