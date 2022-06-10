@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MassivaDto {
+public class MassivaMetalicaDto {
   private String id;
   private String idMassiva;
   private int idAcao;
@@ -37,12 +37,12 @@ public class MassivaDto {
   private int indisponibilidade;
   private String observacao;
 
-  public static List<MassivaDto> converter(List<MassivaMetalica> metalicas) {
-    return metalicas.stream().map(m -> MassivaDto.converter(m)).toList();
+  public static List<MassivaMetalicaDto> converter(List<MassivaMetalica> metalicas) {
+    return metalicas.stream().map(m -> MassivaMetalicaDto.converter(m)).toList();
   }
 
-  public static MassivaDto converter(MassivaMetalica metalica) {
-    return new MassivaDto(metalica.getId(), metalica.getIdMassiva(),
+  public static MassivaMetalicaDto converter(MassivaMetalica metalica) {
+    return new MassivaMetalicaDto(metalica.getId(), metalica.getIdMassiva(),
       metalica.getIdAcao(), metalica.getDescAcao(),
       metalica.getDataAbertura(), metalica.getTipo(), 
       metalica.getStatus(), metalica.getMsan(), 
